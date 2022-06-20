@@ -630,72 +630,60 @@ Created on Wed Apr  6 12:59:34 2022
     
 #1118
 
-media = None
-notaList = []
-iterator = 0
-while iterator < 3:
-    if iterator == 2:
-        resposta = int(input("novo calculo (1-sim 2-nao)"))
-        if resposta == 1:       
-            iterator -= 1
-            nota = float(input())
-            if nota >= 0 and nota <= 10:
-                iterator += 1
-                notaList.append(nota)
-                if len(notaList) == 2:
-                    media = (notaList[0]+notaList[1])/2
-                    print("media = %.2f" %media)
-            else:
-                print("nota invalida")
-                break
-    if nota >= 0 and nota <= 10:
-        iterator += 1
-        notaList.append(nota)
-        if len(notaList) == 2:
-            media = (notaList[0]+notaList[1])/2
-            print("media = %.2f" %media)
-    else:
-        print("nota invalida")
+nota_soma = 0 
+cont = 0
+continuar = True
 
+while continuar==True:
+  nota = float(input())
+  
+  if nota>=0.0 and nota <=10:
+    nota_soma += nota
+    cont += 1 
 
+    if cont == 2:
+      
+      print("media = %.2f"%(nota_soma/2))
+      cont = 0 
+      nota_soma = 0
 
+      while True:
+        print("novo calculo (1-sim 2-nao)")
+        novo = int(input())
+        if novo == 2:
+          continuar = False
+          break
+        elif novo == 1:
+          continuar = True
+          break
+      
+  else:
+    print("nota invalida")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-               
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
